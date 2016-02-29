@@ -84,11 +84,19 @@ namespace Game3
             {
                 if (k.Equals(Keys.Left))
                 {
-                    Contexto.posicaoLocal.moverEsquerda();
+                    Contexto.posicaoLocal.moverX(-1);
                 }
                 if (k.Equals(Keys.Right))
                 {
-                    Contexto.posicaoLocal.moverDireita();
+                    Contexto.posicaoLocal.moverX(1);
+                }
+                if (k.Equals(Keys.Up))
+                {
+                    Contexto.posicaoLocal.moverY(-1);
+                }
+                if (k.Equals(Keys.Down))
+                {
+                    Contexto.posicaoLocal.moverY(1);
                 }
 
             }

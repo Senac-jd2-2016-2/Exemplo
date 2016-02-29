@@ -19,7 +19,6 @@ namespace Game3
     {
         public int x;
         public int y;
-        public int velocidade = 10;
 
         public Posicao(int x, int y)
         {
@@ -27,17 +26,13 @@ namespace Game3
             this.y = y;
         }
 
-        public void moverEsquerda()
+        public void moverX(int qtdPassos)
         {
-            x -= velocidade;
+            x += qtdPassos;
         }
-        public void moverDireita()
+        public void moverY(int qtdPassos)
         {
-            x += velocidade;
-        }
-        public void moverY()
-        {
-            y += velocidade;
+            y += qtdPassos;
         }
 
         public Vector2 getVector()
@@ -103,8 +98,6 @@ namespace Game3
                 {
                     byte[] remoto = ler();
                     escrever(Contexto.posicaoLocal.x, Contexto.posicaoLocal.y);
-                    byte[] bytesx = new byte[4];
-                    byte[] bytesy = new byte[4];
 
                     Contexto.posicaoRemota.x = BitConverter.ToInt32(split(remoto, 0, 3), 0);
                     Contexto.posicaoRemota.y = BitConverter.ToInt32(split(remoto, 4, 7), 0);
